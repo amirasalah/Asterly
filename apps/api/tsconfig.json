@@ -1,12 +1,15 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "strict": true,
-        "esModuleInterop": true,
-        "outDir": "dist",
-        "rootDir": "src",
+      "target": "ES2022",
+      "module": "Node16",
+      "moduleResolution": "node16",
+      "strict": true,
+      "esModuleInterop": true,
+      "allowImportingTsExtensions": true,
+      "rootDir": "src",
+      "outDir": "dist",
+      "noEmit": true
     },
     "include": ["src"]
-}
+  }
+  

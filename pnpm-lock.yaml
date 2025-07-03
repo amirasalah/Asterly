@@ -13,6 +13,12 @@ importers:
       '@hono/node-server':
         specifier: ^1.15.0
         version: 1.15.0(hono@4.8.3)
+      '@hono/node-ws':
+        specifier: ^1.2.0
+        version: 1.2.0(@hono/node-server@1.15.0(hono@4.8.3))(hono@4.8.3)
+      '@hono/trpc-server':
+        specifier: ^0.4.0
+        version: 0.4.0(@trpc/server@11.4.3(typescript@5.8.3))(hono@4.8.3)
       '@trpc/server':
         specifier: ^11.4.3
         version: 11.4.3(typescript@5.8.3)
@@ -32,6 +38,9 @@ importers:
       playwright:
         specifier: ^1.53.2
         version: 1.53.2
+      ts-node:
+        specifier: ^10.9.2
+        version: 10.9.2(@types/node@20.19.4)(typescript@5.8.3)
       ts-node-dev:
         specifier: ^2.0.0
         version: 2.0.0(@types/node@20.19.4)(typescript@5.8.3)
@@ -152,6 +161,20 @@ packages:
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
+
+  '@hono/node-ws@1.2.0':
+    resolution: {integrity: sha512-OBPQ8OSHBw29mj00wT/xGYtB6HY54j0fNSdVZ7gZM3TUeq0So11GXaWtFf1xWxQNfumKIsj0wRuLKWfVsO5GgQ==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      '@hono/node-server': ^1.11.1
+      hono: ^4.6.0
+
+  '@hono/trpc-server@0.4.0':
+    resolution: {integrity: sha512-LGlJfCmNIGMwcknZEIYdujVMs9OkNVazhpOhaz3kTWOXvNL660VOHpvvktosCiJrajyBY1RtIJKQ+IKaQvNuSg==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@trpc/server': ^10.10.0 || >11.0.0-rc
+      hono: '>=4.*'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2202,6 +2225,20 @@ snapshots:
 
   '@hono/node-server@1.15.0(hono@4.8.3)':
     dependencies:
+      hono: 4.8.3
+
+  '@hono/node-ws@1.2.0(@hono/node-server@1.15.0(hono@4.8.3))(hono@4.8.3)':
+    dependencies:
+      '@hono/node-server': 1.15.0(hono@4.8.3)
+      hono: 4.8.3
+      ws: 8.17.1
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@hono/trpc-server@0.4.0(@trpc/server@11.4.3(typescript@5.8.3))(hono@4.8.3)':
+    dependencies:
+      '@trpc/server': 11.4.3(typescript@5.8.3)
       hono: 4.8.3
 
   '@humanfs/core@0.19.1': {}
