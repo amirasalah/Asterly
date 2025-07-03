@@ -1,0 +1,10 @@
+{
+    "name": "asterly",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm -r run dev",
+        "build": "pnpm -r run build",
+        "lint": "pnpm -r run lint",
+        "test": "pnpm -r run test"
+    }
+}
