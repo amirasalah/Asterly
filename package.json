@@ -2,7 +2,10 @@
     "name": "asterly",
     "private": true,
     "scripts": {
-        "dev": "pnpm -r run dev",
+        "api:dev": "pnpm --filter ./apps/api dev",
+        "web:dev": "pnpm --filter ./apps/web dev",
+        "e2e": "pnpm --filter ./apps/web test:e2e",
+        
         "build": "pnpm -r run build",
         "lint": "pnpm -r run lint",
         "test": "pnpm -r run test"
